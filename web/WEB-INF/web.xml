@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <servlet>
+        <servlet-name>HelloServe</servlet-name>
+        <servlet-class>com.sysserve.test.Hello</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>FormServe</servlet-name>
+        <servlet-class>com.sysserve.test.HelloForm</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>CheckServe</servlet-name>
+        <servlet-class>com.sysserve.test.CheckBox</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>ParamServe</servlet-name>
+        <servlet-class>com.sysserve.test.ReadParams</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>HeaderServe</servlet-name>
+        <servlet-class>com.sysserve.test.DisplayHeader</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>RefreshServe</servlet-name>
+        <servlet-class>com.sysserve.test.Refresh</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>ErrorServe</servlet-name>
+        <servlet-class>com.sysserve.test.ShowError</servlet-class>
+    </servlet>
+    
+    <servlet>
+        <servlet-name>ExceptionServe</servlet-name>
+        <servlet-class>com.sysserve.test.ErrorHandler</servlet-class>
+    </servlet>
+    
+    <servlet>
+        <servlet-name>CookieServe</servlet-name>
+        <servlet-class>com.sysserve.test.ReadCookies</servlet-class>
+    </servlet>
+
+    
+    
+    
+    <filter>
+        <filter-name>LogFilter</filter-name>
+        <filter-class>com.sysserve.test.LogFilter</filter-class>
+        <init-param>
+            <param-name>test-param</param-name>
+            <param-value>Initialization Parameter</param-value>
+        </init-param>
+    </filter>
+
+
+
+
+
+
+    <servlet-mapping>
+        <servlet-name>HelloServe</servlet-name>
+        <url-pattern>/hello</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>FormServe</servlet-name>
+        <url-pattern>/helloform</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>CheckServe</servlet-name>
+        <url-pattern>/checkbox</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ParamServe</servlet-name>
+        <url-pattern>/readparams</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>HeaderServe</servlet-name>
+        <url-pattern>/displayheader</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>RefreshServe</servlet-name>
+        <url-pattern>/refresh</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ErrorServe</servlet-name>
+        <url-pattern>/showerror</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>ExceptionServe</servlet-name>
+        <url-pattern>/errorhandler</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>CookieServe</servlet-name>
+        <url-pattern>/readcookies</url-pattern>
+    </servlet-mapping>
+
+
+
+
+    <filter-mapping>
+        <filter-name>LogFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+
+
+
+    <error-page>
+        <error-code>404</error-code>
+        <location>/errorhandler</location>
+    </error-page>
+
+    <error-page>
+        <exception-type>java.lang.Throwable</exception-type>
+        <location>/errorhandler</location>
+    </error-page>
+</web-app>
